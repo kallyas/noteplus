@@ -108,4 +108,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Kallyas - [@kallyas](https://twitter.com/kallyasl)
 
-Project Link: [Demo](https://notesplus.herokuapp.com/)
+Project Link: [Demo](https://noteplus-production.up.railway.app/)
