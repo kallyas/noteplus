@@ -1,7 +1,7 @@
 <!-- Add logo at the center with the title of this app -->
 <p align="center">
   <img src="./notesapp/static/assets/images/logo.png" alt="Logo" width="80" height="80">
-    <h3 align="center">Note Plus</h3>
+    <h3 align="center">Notes Plus</h3>
     <p align="center">
       Create and Manage Your All notes in one place
       <br />
