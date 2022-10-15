@@ -16,5 +16,25 @@
 <body>
     {% block content %}
     {% endblock %}
+    <script src="{{ url_for('static', filename='assets/js/backend-bundle.min.js') }}"></script>
+    
+    <!-- Flextree Javascript-->
+    <script src="{{ url_for('static', filename='assets/js/flex-tree.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/tree.js') }}"></script>
+    
+    <!-- Table Treeview JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/table-treeview.js') }}"></script>
+    
+    <!-- SweetAlert JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/sweetalert.js') }}"></script>
+    
+    <!-- Chart Custom JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/chart-custom.js') }}"></script>
+    
+    <!-- slider JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/slider.js') }}"></script>
+    
+    <!-- app JavaScript -->
+    <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
 </body>
 </html>
