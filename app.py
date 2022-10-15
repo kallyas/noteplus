@@ -14,4 +14,5 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    app.run('0.0.0.0')
+    PORT = int(os.environ.get('PORT', 5000))
+    app.run('0.0.0.0', PORT)
