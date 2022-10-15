@@ -20,6 +20,12 @@ class BaseConfig(object):
     SECRET_KEY = os.environ['SECRET_KEY']
     UPLOAD_FOLDER = UPLOAD_FOLDER
     ALLOWED_EXTENSIONS = ALLOWED_EXTENSIONS
+    # MAIL_HOST = os.environ['MAIL_HOST']
+    # MAIL_PORT = os.environ['MAIL_PORT']
+    # MAIL_USERNAME = os.environ['MAIL_USERNAME']
+    # MAIL_PASSWORD = os.environ['MAIL_PASSWORD']
+    # MAIL_USE_TLS = False
+    # MAIL_USE_SSL = False
 
 # Development configuration
 class DevelopmentConfig(BaseConfig):

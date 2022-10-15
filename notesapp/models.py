@@ -56,6 +56,10 @@ class Note(db.Model, ExtraMixin):
 
     def __repr__(self):
         return f"Note('{self.title}', '{self.content}')"
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
         
     
     @property
@@ -84,5 +88,27 @@ class Note(db.Model, ExtraMixin):
 
 
 
+class ResetPassword(db.Model, ExtraMixin):
+    __tablename__ = 'reset_password'
+    email = db.Column(db.String(100), nullable=False)
+    token = db.Column(db.String(100), nullable=False)
+    is_used = db.Column(db.Boolean, default=False)
 
+    def __repr__(self):
+        return f"ResetPassword('{self.email}', '{self.token}')"
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_reset_password_token(cls, token):
+        return cls.query.filter_by(token=token).order_by(cls.created_at.desc()).first()
+
+    @staticmethod
+    def generate_token(email):
+        return hashlib.sha256(email.encode()).hexdigest()
+
+    @staticmethod
+    def verify_token(email, token):
+        return hashlib.sha256(email.encode()).hexdigest() == token

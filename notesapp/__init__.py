@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_mail import Mail
 from .config import app_config
 
 convention = {
@@ -21,6 +22,7 @@ db = SQLAlchemy(metadata=metadata)
 ma = Marshmallow()
 migrate = Migrate()
 login_manager = LoginManager()
+mail = Mail()
 
 TEMPLATES_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 STATIC_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
@@ -31,6 +33,7 @@ def create_app(config_name=os.environ['APP_ENV']):
     app.config.from_object(app_config[config_name])
     db.init_app(app)
     ma.init_app(app)
+    mail.init_app(app)
     login_manager.init_app(app)
     migrate.init_app(app, db)
 
