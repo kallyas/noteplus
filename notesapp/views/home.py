@@ -11,6 +11,7 @@ def redirect_to_home():
 
 @views.route("/home", methods=["GET", "POST"])
 def home():
+    # 
     if not current_user.is_authenticated:
         return redirect(url_for("auth.login"))
     return render_template("home.html", username=current_user.username)
