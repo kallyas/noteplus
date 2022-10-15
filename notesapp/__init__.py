@@ -41,7 +41,9 @@ def create_app(config_name=os.environ['APP_ENV']):
         return User.query.get(int(user_id))
 
     from .auth.resource import auth as auth_blueprint
+    from .views.home import views as views_blueprint
 
     app.register_blueprint(auth_blueprint)
+    app.register_blueprint(views_blueprint)
 
     return app

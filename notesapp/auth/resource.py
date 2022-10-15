@@ -1,5 +1,5 @@
 from flask import Blueprint, flash, render_template, redirect, request, url_for
-from flask_login import login_user
+from flask_login import current_user, login_user, logout_user, login_required
 from notesapp.models import User
 
 auth = Blueprint("auth", __name__)
@@ -7,6 +7,8 @@ auth = Blueprint("auth", __name__)
 
 @auth.route("/auth/login", methods=["GET", "POST"])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for("views.home"))
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
@@ -34,6 +36,8 @@ def recover_password():
 
 @auth.route("/auth/register", methods=["GET", "POST"])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for("views.home"))
     if request.method == "POST":
         email = request.form.get("email")
         first_name = request.form.get("first_name")
@@ -60,3 +64,10 @@ def register():
                 return redirect(url_for("auth.login"))
 
     return render_template("signup.html")
+
+
+@auth.route("/auth/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("auth.login"))
