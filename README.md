@@ -24,7 +24,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Notes Plus][product-screenshot]](https://example.com)
+[![Notes Plus](https://user-images.githubusercontent.com/60466044/195991507-7902e8d5-06f8-45ac-9262-b14f963a7ab2.png)
+](https://noteplus-production.up.railway.app/)
 
 Notes Plus is a simple note taking app that allows you to create and manage your all notes in one place. You can create notes, edit notes, delete notes, search notes, and share notes with your friends.
 
