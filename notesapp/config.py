@@ -8,9 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 UPLOAD_FOLDER = os.path.abspath(os.path.dirname('uploads'))
-TEMPLATES_FOLDER = os.path.abspath(os.path.dirname('templates'))
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-STATIC_FOLDER = os.path.abspath(os.path.dirname('static'))
 
 
 # Base configuration
@@ -21,8 +19,6 @@ class BaseConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ['SECRET_KEY']
     UPLOAD_FOLDER = UPLOAD_FOLDER
-    TEMPLATES_FOLDER = TEMPLATES_FOLDER
-    STATIC_FOLDER = STATIC_FOLDER
     ALLOWED_EXTENSIONS = ALLOWED_EXTENSIONS
 
 # Development configuration
