@@ -15,7 +15,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 class BaseConfig(object):
     DEBUG = False
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI = os.environ['MYSQL_URL']
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ['SECRET_KEY']
     UPLOAD_FOLDER = UPLOAD_FOLDER
@@ -39,7 +39,7 @@ class TestingConfig(BaseConfig):
 
 # Production configuration
 class ProductionConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL_PRODUCTION']
+    SQLALCHEMY_DATABASE_URI = os.environ['MYSQL_URL']
 
 
 app_config = {
